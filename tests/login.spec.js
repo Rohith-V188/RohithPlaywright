@@ -30,7 +30,12 @@ test("Verifying Login page", async ({page}) =>
   await page.getByRole('textbox', { name: 'Password' }).fill('admin123');
   await page.getByRole('button', { name: 'Login' }).click();
   await expect(page.getByRole('heading', { name: 'Dashboard' })).toBeVisible();
-  await page.getByRole('listitem').filter({ hasText: 'Test User' }).locator('i').click();
-  await page.getByRole('menuitem', { name: 'Logout' }).click();
+  await page.getByRole('listitem').filter({ hasText: 'Test User' }).locator('i').click()
+  await page.getByRole('menuitem', { name: 'Logout' }).click()
   await expect(page.getByRole('heading', { name: 'Login' })).toBeVisible();
+  await page.close();
 });
+
+test('validate the job field', async ({page}) => {
+    
+})
